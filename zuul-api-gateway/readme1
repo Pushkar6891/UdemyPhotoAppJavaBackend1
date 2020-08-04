@@ -1,0 +1,16 @@
+http://localhost:8011/users-service/users/status/check
+http://localhost:8011/account-service/account/status/check
+
+#H2 Database
+http://localhost:8011/users-service/h2-console
+http://localhost:8011/account-service/h2-console
+
+#https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready
+#Actuator End Points
+http://localhost:8011/actuator/health (turn off rabbitmq and test)
+http://localhost:8011/actuator/routes
+http://localhost:8011/actuator/beans
+http://localhost:8011/actuator/info
+
+http://localhost:8011/users-service/actuator/mappings
+http://localhost:8011/account-service/actuator/mappings

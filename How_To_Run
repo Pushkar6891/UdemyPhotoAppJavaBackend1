@@ -1,0 +1,5 @@
+To Run:
+1. Change the IP Address to current MAC OS IP Address (zuul.api.gateway.ip.address.local.mac.machine=192.168.0.4)  in application.properties files(in Folder UdemyPhotoAppNativeLocalFileSystem3 & UdemyPhotoAppSpringCloudConfigServer2)
+2. Make sure you have exact token in all application.properties files token.secret=hfgry463hf746hf573ydh475fhy5739
+3. MySQDL atabase table will be created automatically
+4. Read POSTMAN Testing Word Document attached (POSTMAN_TESTING_1 and POSTMAN_TESTING_2)

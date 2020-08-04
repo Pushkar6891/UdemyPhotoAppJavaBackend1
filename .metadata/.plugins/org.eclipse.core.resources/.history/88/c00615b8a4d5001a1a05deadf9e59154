@@ -1,0 +1,14 @@
+http://192.168.0.4:61190/users/987654321/albums
+http://localhost:8011/users-service/users/8f3023cc-bc85-43df-9ff8-b2d56bf32af5
+
+Authorization
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4ZjMwMjNjYy1iYzg1LTQzZGYtOWZmOC1iMmQ1NmJmMzJhZjUiLCJleHAiOjE1OTY0Nzk3MzB9.wbHbghxxAmqca_AjrFy2cJnT0F7-xhz_kl36Urmp14X5mPOWQE1bruUmOvFP5ccI32D2RViAC76xjJ5N5KtXgA
+
+Accept
+application/json
+
+
+
+Working:
+http://localhost:8011/albums-service/albums/status/check
+http://192.168.0.3:54886/users/987654321/albums

@@ -1,0 +1,28 @@
+/users/status/check
+
+#Database H2
+http://localhost:8011/users-service/h2-console
+
+POST:
+URL:
+http://<zuul-from-eureka>:8011/users-service/users/login
+I/P:
+Headers:
+None
+None
+Body:
+
+{
+    "email":"sachin@gmail.com",
+    "password":"Welcome@12345"
+}
+O/P:
+200 OKs
+None
+Key: token
+Value:
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNWY2MTMzYy1kNDk2LTQyOGQtOGRiYS0yZDgyNDczNmY4ZDEiLCJleHAiOjE1OTY1MjE3ODV9.NrIaSZy3Mc2nwNwDxDAPPR_b4BeG9MJ4AXpUuP931n4MrtZTaJOXOIEGlWBonjhIcIvkPrX4vkzAPuNf3qrrxQ
+
+Key: userId
+Value:
+15f6133c-d496-428d-8dba-2d824736f8d1

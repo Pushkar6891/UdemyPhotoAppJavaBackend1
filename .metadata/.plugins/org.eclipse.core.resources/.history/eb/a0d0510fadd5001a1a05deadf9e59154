@@ -1,0 +1,16 @@
+package com.photoapp.users.data;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.photoapp.users.ui.model.AlbumResponseModel;
+
+@FeignClient(name = "albums-service")
+public interface AlbumsServiceFeignClient {
+
+	@GetMapping("/users/{id}/albumss")
+	public List<AlbumResponseModel> getAlbums(@PathVariable String id);
+}

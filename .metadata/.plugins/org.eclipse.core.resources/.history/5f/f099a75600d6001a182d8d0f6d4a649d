@@ -1,0 +1,30 @@
+server.port=8012
+spring.application.name=spring-cloud-config-server
+
+#Git Configuration (For Remote Configuration)
+#spring.profiles.active=git
+#spring.cloud.config.server.git.uri=https://github.com/Pushkar6891/UdemyPhotoAppSpringCloudConfigServer
+#spring.cloud.config.server.git.username=pushkarchauhan91@gmail.com
+#spring.cloud.config.server.git.password=A#1tm@n/giig
+#spring.cloud.config.server.git.clone-on-start=true
+
+#Git Configuration (For Local/Native Configuration)
+spring.profiles.active=native
+spring.cloud.config.server.native.search-locations=file://${user.home}/Documents/workspaces/workspace_microservices_photoapp_config_native_filesystem
+
+#Spring Cloud Bus
+spring.cloud.bus.refresh.enabled=true
+spring.cloud.bus.env.enabled=true
+spring.cloud.bus.trace.enabled=true
+spring.cloud.bus.ack.enabled=true
+
+#spring.cloud.config.server.monitor.github=true
+management.endpoints.web.exposure.include=bus-refresh
+management.endpoint.shutdown.enabled=true
+#management.security.enabled=false
+
+#Rabbit MQ Credentials
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=pushkar
+spring.rabbitmq.password=test1234

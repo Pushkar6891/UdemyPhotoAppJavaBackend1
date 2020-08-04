@@ -1,0 +1,5 @@
+SELECT * FROM photoappdb.users;
+/*
+SET SQL_SAFE_UPDATES=0;
+delete from users where first_name not in ('a')
+*/

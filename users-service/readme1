@@ -1,0 +1,28 @@
+/users/status/check
+
+#Database H2
+http://localhost:8011/users-service/h2-console
+
+POST:
+URL:
+http://<zuul-from-eureka>:8011/users-service/users
+I/P:
+Headers:
+Accept 		: application/xml or Accept : application/json
+ContentType : application/json or ContentType : application/json
+None
+Body:
+
+{
+    "firstName":"Sachin",
+    "lastName":"Tendulkar",
+    "password":"Welcome@123",
+    "email":"sachin@gmail.com"
+}
+O/P:
+{
+    "firstName": "Sachin",
+    "lastName": "Tendulkar",
+    "email": "sachin@gmail.com",
+    "userId": "cdc476ff-61a8-4a87-a482-17e3a1a2b412"
+}

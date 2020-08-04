@@ -1,0 +1,20 @@
+I/P:
+Headers:
+Accept : application/json
+Content-Type : application/json
+POST
+http://localhost:8011/users-service/users
+{
+    "firstName":"PushPushPush",
+    "lastName":"PushPushPush",
+    "password":"PushPushPush",
+    "email":"PushPushPush@gmail.com"
+}
+O/P:
+{
+    "firstName": "PushPushPush",
+    "lastName": "PushPushPush",
+    "email": "PushPushPush@gmail.com",
+    "userId": "8f3023cc-bc85-43df-9ff8-b2d56bf32af5"
+}
+

@@ -1,0 +1,44 @@
+package com.photoapp.zuul.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+
+@Configuration
+@EnableWebSecurity
+public class WebSecurity extends WebSecurityConfigurerAdapter {
+
+	@Autowired
+	private Environment environment;
+
+	public WebSecurity(Environment environment) {
+		this.environment = environment;
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		// disable csrf or cross site request forgery
+		http.csrf().disable();
+
+		// disable frame option so that you can see h2 console on browser
+		http.headers().frameOptions().disable();
+
+		http.authorizeRequests().antMatchers(environment.getProperty("api.users.actuator.url.path")).permitAll()
+				.antMatchers(environment.getProperty("api.account.actuator.url.path")).permitAll()
+				.antMatchers(environment.getProperty("api.zuul.actuator.url.path")).permitAll()
+				.antMatchers(environment.getProperty("api.h2console.url.path")).permitAll()
+				.antMatchers(HttpMethod.POST, environment.getProperty("api.registration.url.path")).permitAll()
+				.antMatchers(HttpMethod.POST, environment.getProperty("api.login.url.path")).permitAll().anyRequest()
+				.authenticated().and().addFilter(new AuthorizationFilter(authenticationManager(), environment));
+
+		// this will make out API Stateless things will not cached like token, other
+		// session will not be created
+		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+	}
+}

@@ -1,0 +1,20 @@
+/users/status/check
+
+#Database H2
+http://localhost:8011/users-service/h2-console
+
+GET:
+URL:
+http://<zuul from eureka>:8011/users-service/users/status/check
+http://localhost:8011/users-service/users/status/check ==> use this
+I/P:
+Headers:
+Authorization
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYTQ2NGRjNS1jZWQ4LTQ2YTUtYTkwYS1mMDBhZTA1NGZlNWQiLCJleHAiOjE1OTY1MjM4Nzl9.5LdioigwaBUMjwc9Y7FbpYVsWKc72oiTD1lG7ZIeTKZxc3NpXwAUpDF7Hl9vkROATsabJ52UpERFp-whP6r-ng
+
+Body:
+None
+
+O/P:
+200 OKs
+Working on port number : 54545

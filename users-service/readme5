@@ -1,0 +1,10 @@
+Java JCE (Java Cryptography Extension)
+
+Add to JDK 8 2 jars
+
+Using Feign
+GET
+http://localhost:8011/users-service/users/8f3023cc-bc85-43df-9ff8-b2d56bf32af5
+
+Authorization
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4ZjMwMjNjYy1iYzg1LTQzZGYtOWZmOC1iMmQ1NmJmMzJhZjUiLCJleHAiOjE1OTY0ODExMjB9.Z_qEqOiw90EvB8zzCfmoomOpsA6HUy4792GiI036vYXJZPzid-k--pei8sWlh0ksOrzampWyjEiavqq_BM1tIQ

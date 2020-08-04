@@ -1,0 +1,4 @@
+/account/status/check
+
+#H2 Database
+http://localhost:8011/account-service/h2-console

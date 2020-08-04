@@ -1,0 +1,10 @@
+package com.photoapp.users.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.photoapp.users.data.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
+	UserEntity findByEmail(String email);
+}

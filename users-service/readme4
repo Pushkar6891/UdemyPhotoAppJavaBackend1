@@ -1,0 +1,12 @@
+#Read both native properties from bootstrap.properties and application.properties
+http://localhost:8012/users-service/default
+
+#Actuator
+/health
+/beans
+/httptrace
+/mappings
+
+http://localhost:8011/users-service/actuator/mappings
+
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle#production-ready

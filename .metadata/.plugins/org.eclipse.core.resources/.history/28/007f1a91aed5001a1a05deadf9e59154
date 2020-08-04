@@ -1,0 +1,50 @@
+package com.photoapp.users;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.client.RestTemplate;
+
+import feign.Logger;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+@EnableCircuitBreaker
+public class UsersServiceApplication {
+
+	private Environment environment;
+
+	public static void main(String[] args) {
+		SpringApplication.run(UsersServiceApplication.class, args);
+	}
+
+	// Creating a Bean of BCryptPasswordEncoder so that
+	// its object need to be exist in ApplicationContext
+
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+	@LoadBalanced
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
+
+	// To enable HTTP Requests Logging in Feign Client
+	// By default feign supports only DEBUG mode
+	// to enable other Feign Logging Levels we are defining below method
+	@Bean
+	Logger.Level feignLoggerLevel() {
+		return Logger.Level.FULL;
+	}
+
+}

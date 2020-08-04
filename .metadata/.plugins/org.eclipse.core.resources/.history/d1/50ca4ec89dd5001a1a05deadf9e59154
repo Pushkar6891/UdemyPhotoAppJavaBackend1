@@ -1,0 +1,26 @@
+server.port=8011
+spring.application.name=zuul-api-gateway
+eureka.client.service-url.defaultZone=http://localhost:8010/eureka
+
+#Web Security
+authorization.token.header.name = Authorization
+authorization.token.header.prefix = Bearer
+token.secret = hfgry463hf746hf573ydh475fhy5739
+
+api.h2console.url.path = /users-service/h2-console/**
+api.registration.url.path = /users-service/users
+api.login.url.path = /users-service/users/login
+api.users.actuator.url.path=/users-service/actuator/*
+api.account.actuator.url.path=/account-service/actuator/*
+api.albums.actuator.url.path=/albums-service/actuator/*
+
+#Actuator End Points
+#management.endpoints.web.exposure.include=beans,health,routes,httptrace
+management.endpoints.web.exposure.include=*
+api.zuul.actuator.url.path=/actuator/*
+
+#Rabbit MQ Credentials
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=pushkar
+spring.rabbitmq.password=test1234

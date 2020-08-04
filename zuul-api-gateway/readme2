@@ -1,0 +1,62 @@
+I/P:
+Headers:
+Accept : application/json
+Content-Type : application/json
+POST
+http://localhost:8011/users-service/users
+{
+    "firstName":"PushPushPush",
+    "lastName":"PushPushPush",
+    "password":"PushPushPush",
+    "email":"PushPushPush@gmail.com"
+}
+O/P:
+{
+    "firstName": "PushPushPush",
+    "lastName": "PushPushPush",
+    "email": "PushPushPush@gmail.com",
+    "userId": "8f3023cc-bc85-43df-9ff8-b2d56bf32af5"
+}
+
+I/P:
+Headers:
+None
+POST
+http://localhost:8011/users-service/users/login
+{
+    "email":"PushPushPush@gmail.com",
+    "password":"PushPushPush"
+}
+O/P:
+token : eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4ZjMwMjNjYy1iYzg1LTQzZGYtOWZmOC1iMmQ1NmJmMzJhZjUiLCJleHAiOjE1OTY0ODM3NDN9.zU8gEEnptl6-STVL1ViO7Rq7-b4Pg-yw2-3wraHBMwspoYOL-Oy1-_JzyDKDfExTopC1AsDMofphyJjdDj13HA
+userId : 8f3023cc-bc85-43df-9ff8-b2d56bf32af5
+
+I/P:
+Headers:
+Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4ZjMwMjNjYy1iYzg1LTQzZGYtOWZmOC1iMmQ1NmJmMzJhZjUiLCJleHAiOjE1OTY0ODM3NDN9.zU8gEEnptl6-STVL1ViO7Rq7-b4Pg-yw2-3wraHBMwspoYOL-Oy1-_JzyDKDfExTopC1AsDMofphyJjdDj13HA
+GET
+http://localhost:8011/users-service/users/8f3023cc-bc85-43df-9ff8-b2d56bf32af5
+Body:
+Nonde
+O/P:
+200 OK
+<UserResponseModel>
+    <userId>8f3023cc-bc85-43df-9ff8-b2d56bf32af5</userId>
+    <firstName>PushPushPush</firstName>
+    <lastName>PushPushPush</lastName>
+    <email>PushPushPush@gmail.com</email>
+    <albums>
+        <albums>
+            <albumId>album1Id</albumId>
+            <userId>8f3023cc-bc85-43df-9ff8-b2d56bf32af5</userId>
+            <name>album 1 name</name>
+            <description>album 1 description</description>
+        </albums>
+        <albums>
+            <albumId>album2Id</albumId>
+            <userId>8f3023cc-bc85-43df-9ff8-b2d56bf32af5</userId>
+            <name>album 2 name</name>
+            <description>album 2 description</description>
+        </albums>
+    </albums>
+</UserResponseModel>
